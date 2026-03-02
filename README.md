@@ -25,6 +25,39 @@ It demonstrates:
 
 # 🏗️ Architecture
 
+## 📸 Unity Catalog Setup
+
+![Unity Catalog](./assets/unity-catalog.png)
+
+---
+
+## 🥉 Bronze Layer — Raw Ingestion
+
+![Bronze Layer](./assets/bronze-layer.png)
+
+---
+
+## 🥈 Silver Layer — Cleaned & Historical
+
+![Silver Layer](./assets/silver-layer.png)
+
+---
+
+## 🥇 Gold Layer — Analytics Models
+
+![Gold Layer](./assets/gold-layer.png)
+
+---
+
+# 🧪 dbt Test Execution
+
+![dbt Tests](./assets/dbt-tests.png)
+
+---
+
+# ⚙️ dbt Run Output
+
+![dbt Run](./assets/dbt-run.png)
 ## 🥉 Bronze Layer — Raw Ingestion
 
 - Direct references to Unity Catalog source tables
@@ -60,28 +93,33 @@ It demonstrates:
 - Materialized as **tables**
 
 **Goal:** Deliver analytics-ready datasets for reporting.
+## 📂 Project Structure
 
-# 📂 Project Structure
----
-my_dbt_project/
-│
-├── models/
-│ ├── bronze/ # Raw ingestion models
-│ ├── silver/ # Cleaned & joined transformations
-│ ├── gold/ # Business-ready models
-│ └── source/ # Source definitions
-│
-├── tests/
-│ └── generic/ # Custom generic tests
-│
-├── macros/ # Reusable SQL macros
-│
-├── seeds/ # Static reference data (CSV)
-│
-├── snapshots/ # SCD Type-2 implementations
-│
-├── dbt_project.yml
-└── profiles.yml
+| Folder/File        | Purpose |
+|--------------------|----------|
+| `models/bronze`    | Raw ingestion models |
+| `models/silver`    | Cleaned & joined transformations |
+| `models/gold`      | Business-ready analytics models |
+| `models/source`    | Source table definitions |
+| `tests/generic`    | Custom reusable data tests |
+| `macros/`          | Reusable SQL macros |
+| `seeds/`           | Static reference CSV data |
+| `snapshots/`       | SCD Type-2 snapshot logic |
+| `dbt_project.yml`  | dbt configuration file |
+| `profiles.yml`     | Databricks connection config |
 
+## 🎯 Key Highlights
+
+End-to-end ELT pipeline in Databricks
+
+Production-style dbt project organization
+
+SCD Type-2 historical modeling
+
+Automated data validation framework
+
+Modular SQL engineering with reusable macros
+
+Analytics-ready Gold layer
 
 
