@@ -61,5 +61,27 @@ It demonstrates:
 
 **Goal:** Deliver analytics-ready datasets for reporting.
 
+# 📂 Project Structure
 ---
+my_dbt_project/
+│
+├── models/
+│ ├── bronze/ # Raw ingestion models
+│ ├── silver/ # Cleaned & joined transformations
+│ ├── gold/ # Business-ready models
+│ └── source/ # Source definitions
+│
+├── tests/
+│ └── generic/ # Custom generic tests
+│
+├── macros/ # Reusable SQL macros
+│
+├── seeds/ # Static reference data (CSV)
+│
+├── snapshots/ # SCD Type-2 implementations
+│
+├── dbt_project.yml
+└── profiles.yml
+
+
 
