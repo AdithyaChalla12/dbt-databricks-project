@@ -27,42 +27,17 @@ It demonstrates:
 
 ## 📸 Unity Catalog Setup
 
-![Unity Catalog](./assets/unity-catalog.png)
+<img src="./assets/unity-catalog-setup.png" width="1000"/>
 
 ---
 
 ## 🥉 Bronze Layer — Raw Ingestion
 
-![Bronze Layer](./assets/bronze-layer.png)
+<img src="./assets/bronze-layer-model.png" width="1000"/>
 
----
-
-## 🥈 Silver Layer — Cleaned & Historical
-
-![Silver Layer](./assets/silver-layer.png)
-
----
-
-## 🥇 Gold Layer — Analytics Models
-
-![Gold Layer](./assets/gold-layer.png)
-
----
-
-# 🧪 dbt Test Execution
-
-![dbt Tests](./assets/dbt-tests.png)
-
----
-
-# ⚙️ dbt Run Output
-
-![dbt Run](./assets/dbt-run.png)
-## 🥉 Bronze Layer — Raw Ingestion
-
-- Direct references to Unity Catalog source tables
-- Minimal transformation
-- Column standardization
+- Direct references to Unity Catalog source tables  
+- Minimal transformation  
+- Column standardization  
 - Materialized as **views**
 
 **Goal:** Preserve trusted raw data.
@@ -71,10 +46,12 @@ It demonstrates:
 
 ## 🥈 Silver Layer — Cleaned & Historical (SCD Type 2)
 
-- Standardized and joined datasets
-- Fact + dimension modeling
-- Deduplication logic
-- Implemented **Slowly Changing Dimension Type 2**
+<img src="./assets/silver-layer-transformations.png" width="1000"/>
+
+- Standardized and joined datasets  
+- Fact + dimension modeling  
+- Deduplication logic  
+- Implemented **Slowly Changing Dimension Type 2**  
 - Tracks:
   - `effective_start_date`
   - `effective_end_date`
@@ -85,7 +62,29 @@ It demonstrates:
 
 ---
 
+## 🧪 dbt Test Execution
+
+<img src="./assets/dbt-test-results.png" width="1000"/>
+
+- Implemented built-in tests: `not_null`, `unique`, `accepted_values`
+- Created custom generic test: `generic_non_negative`
+- Automated validation during `dbt test`
+
+---
+
+## ⚙️ dbt Run Output
+
+<img src="./assets/dbt-run-output.png" width="1000"/>
+
+- Successfully executed layered models
+- Verified dependency graph via `ref()`
+- Full pipeline execution with `dbt run`
+
+---
+
 ## 🥇 Gold Layer — Analytics & KPI Models
+
+*(Add gold layer screenshot here if available)*
 
 - Aggregated reporting tables
 - Business KPIs
@@ -93,6 +92,9 @@ It demonstrates:
 - Materialized as **tables**
 
 **Goal:** Deliver analytics-ready datasets for reporting.
+
+---
+
 ## 📂 Project Structure
 
 | Folder/File        | Purpose |
@@ -108,18 +110,13 @@ It demonstrates:
 | `dbt_project.yml`  | dbt configuration file |
 | `profiles.yml`     | Databricks connection config |
 
+---
+
 ## 🎯 Key Highlights
 
-End-to-end ELT pipeline in Databricks
-
-Production-style dbt project organization
-
-SCD Type-2 historical modeling
-
-Automated data validation framework
-
-Modular SQL engineering with reusable macros
-
-Analytics-ready Gold layer
-
-
+- End-to-end ELT pipeline in Databricks  
+- Production-style dbt project organization  
+- SCD Type-2 historical modeling  
+- Automated data validation framework  
+- Modular SQL engineering with reusable macros  
+- Analytics-ready Gold layer  
