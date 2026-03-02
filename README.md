@@ -82,6 +82,18 @@ It demonstrates:
 
 ---
 
+## 🕒 SCD Type 2 Implementation (Snapshots)
+
+<img src="./assets/scd-type2.png" width="1000"/>
+
+This project implements **Slowly Changing Dimension Type 2 (SCD-2)** using `dbt snapshots`.
+
+### 📌 What It Does
+
+- Tracks historical changes in dimension tables
+- Preserves previous records instead of overwriting
+- Maintains full data lineage
+
 ## 🥇 Gold Layer — Analytics & KPI Models
 
 *(Add gold layer screenshot here if available)*
@@ -120,3 +132,4 @@ It demonstrates:
 - Automated data validation framework  
 - Modular SQL engineering with reusable macros  
 - Analytics-ready Gold layer  
+
